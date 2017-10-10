@@ -1,0 +1,18 @@
+digraph G {
+  rankdir = LR
+  node[shape=circle color=black fillcolor=white fixedsize=true width=1]
+  {
+    object [label="Object"]
+    decision [label="Decision"]
+  }
+  node[shape=rectangle height=.75 width=1.5]
+  {
+    featureExtraction [label="Feature\nreduction"]
+    classification [label="Classification"]
+    postprocessing [label="Post-\nprocessing"]
+  }
+
+  object -> featureExtraction [label="Pattern\nacquisiton"]
+
+  featureExtraction -> classification -> postprocessing -> decision
+}
